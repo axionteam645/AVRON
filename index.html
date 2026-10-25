@@ -1,1 +1,1979 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#08080e">
+<meta name="description" content="AVRON — A new dimension of decentralized innovation on BNB Smart Chain. Explore Web3, connect your wallet and discover the AVRON ecosystem.">
+<title>AVRON | Beyond the Chain</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg:#08080e;
+  --bg2:#0e101a;
+  --card:#141622;
+  --text:#f4f5ff;
+  --muted:#9396aa;
+  --green:#83fbc2;
+  --purple:#a77bff;
+  --cyan:#61e4f2;
+  --border:rgba(255,255,255,.09);
+  --gradient:linear-gradient(110deg,#82f9bd,#68ddeb,#aa80ff);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:Inter,Arial,sans-serif;
+  overflow-x:hidden;
+}
+a{text-decoration:none;color:inherit}
+button,input{font:inherit}
+button{cursor:pointer}
+button:disabled{cursor:not-allowed;opacity:.5}
+::selection{background:#a77bff;color:#08080e}
+.container{max-width:1240px;margin:auto;padding:0 24px}
+.gradient-text{
+  background:var(--gradient);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+}
+.grid-bg{
+  position:absolute;
+  inset:0;
+  background-image:
+   linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),
+   linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);
+  background-size:70px 70px;
+  mask-image:linear-gradient(to bottom,black,transparent);
+  pointer-events:none;
+}
+.glow-one{
+  position:absolute;
+  width:600px;height:600px;
+  border-radius:50%;
+  top:-200px;right:-200px;
+  background:#6636a8;
+  filter:blur(130px);
+  opacity:.24;
+  pointer-events:none;
+}
+.glow-two{
+  position:absolute;
+  width:500px;height:500px;
+  border-radius:50%;
+  left:-250px;bottom:0;
+  background:#20ac85;
+  filter:blur(145px);
+  opacity:.14;
+  pointer-events:none;
+}
+
+/* NAVIGATION */
+header{
+  position:fixed;
+  z-index:1000;
+  width:100%;
+  top:0;
+  background:rgba(8,8,14,.82);
+  backdrop-filter:blur(22px);
+  border-bottom:1px solid var(--border);
+}
+.nav{
+  min-height:84px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+}
+.brand{display:flex;align-items:center;gap:13px}
+.brand-icon{
+  width:52px;height:52px;
+  display:grid;place-items:center;
+  overflow:hidden;
+}
+.brand-icon img{
+  width:100%;height:100%;object-fit:contain;
+  mix-blend-mode:screen;
+}
+.brand-name{
+  font-family:"Space Grotesk";
+  font-size:27px;font-weight:700;
+  letter-spacing:2px;
+}
+.nav-links{display:flex;align-items:center;gap:28px}
+.nav-links a{
+  color:#b4b5c6;font-size:13px;
+  font-weight:600;transition:.25s;
+}
+.nav-links a:hover{color:var(--green)}
+.nav-actions{display:flex;gap:12px;align-items:center}
+.btn{
+  display:inline-flex;align-items:center;
+  justify-content:center;gap:9px;
+  padding:14px 22px;border-radius:10px;
+  font-weight:700;font-size:13px;
+  border:1px solid transparent;
+  transition:.25s;
+}
+.btn:hover{transform:translateY(-3px)}
+.btn-primary{background:var(--gradient);color:#08080e}
+.btn-outline{
+  background:rgba(255,255,255,.035);
+  border-color:rgba(255,255,255,.15);
+  color:#fff;
+}
+.btn-outline:hover{border-color:var(--purple)}
+.mobile-toggle{
+  display:none;background:transparent;
+  color:white;border:0;font-size:27px;
+}
+
+/* HERO */
+.hero{
+  position:relative;
+  min-height:780px;
+  padding:185px 0 105px;
+  overflow:hidden;
+}
+.hero-layout{
+  display:grid;
+  grid-template-columns:1.08fr .92fr;
+  gap:45px;align-items:center;
+}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:9px 15px;
+  border-radius:100px;
+  border:1px solid rgba(131,251,194,.25);
+  background:rgba(131,251,194,.05);
+  font-size:11px;letter-spacing:2px;
+  font-weight:800;color:var(--green);
+}
+.dot{
+  width:7px;height:7px;border-radius:50%;
+  background:var(--green);
+  box-shadow:0 0 14px var(--green);
+}
+.hero h1{
+  font-family:"Space Grotesk";
+  font-size:clamp(47px,6.8vw,91px);
+  letter-spacing:-5px;
+  line-height:1.02;
+  margin:30px 0;
+}
+.hero p{
+  color:#adb0c3;
+  font-size:16px;line-height:1.9;
+  max-width:540px;
+}
+.hero-buttons{display:flex;gap:14px;flex-wrap:wrap;margin-top:35px}
+.hero-bottom{display:flex;gap:30px;margin-top:55px;flex-wrap:wrap}
+.hero-stat strong{
+  font-size:22px;display:block;
+  font-family:"Space Grotesk";
+}
+.hero-stat small{
+  display:block;margin-top:7px;color:var(--muted);font-size:11px;
+  text-transform:uppercase;letter-spacing:1.5px;
+}
+.stat-separator{height:41px;width:1px;background:var(--border)}
+.hero-visual{
+  height:540px;position:relative;
+  display:flex;align-items:center;justify-content:center;
+  perspective:1000px;
+}
+.orbit{
+  position:absolute;
+  width:420px;height:420px;
+  border:1px solid rgba(167,123,255,.18);
+  border-radius:50%;
+  transform:rotateX(68deg) rotateZ(25deg);
+  animation:orbit 19s linear infinite;
+}
+.orbit-two{
+  width:510px;height:510px;
+  border-color:rgba(131,251,194,.12);
+  transform:rotateX(58deg) rotateZ(-35deg);
+  animation-duration:27s;
+  animation-direction:reverse;
+}
+@keyframes orbit{
+  to{transform:rotateX(68deg) rotateZ(385deg)}
+}
+.orb-core{
+  position:relative;
+  width:310px;height:310px;
+  display:grid;place-items:center;
+  border-radius:50%;
+  background:
+   radial-gradient(circle at 35% 25%,rgba(167,123,255,.33),transparent 55%),
+   radial-gradient(circle at 70% 80%,rgba(131,251,194,.2),transparent 50%),
+   linear-gradient(140deg,#202039,#0b1019);
+  border:1px solid rgba(255,255,255,.2);
+  box-shadow:
+   0 0 110px rgba(142,81,255,.2),
+   0 0 90px rgba(91,248,189,.09),
+   inset 0 0 70px rgba(167,123,255,.14);
+  animation:float 6s ease-in-out infinite;
+}
+.orb-core:before{
+  content:"";position:absolute;inset:-14px;
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:50%;
+}
+.orb-core img{
+  width:65%;height:65%;object-fit:contain;
+  filter:drop-shadow(0 0 35px rgba(131,251,194,.25));
+  mix-blend-mode:screen;
+}
+@keyframes float{
+  50%{transform:translateY(-18px) rotate(5deg)}
+}
+.floating-label{
+  position:absolute;
+  padding:15px 19px;
+  background:rgba(19,21,34,.85);
+  backdrop-filter:blur(20px);
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:13px;
+  box-shadow:0 20px 70px rgba(0,0,0,.3);
+}
+.float-one{left:0;top:100px}
+.float-two{right:0;bottom:90px}
+.floating-label small{
+  display:block;color:var(--muted);
+  font-size:10px;letter-spacing:1px;
+}
+.floating-label strong{
+  display:block;margin-top:7px;font-size:15px;
+}
+.green{color:var(--green)}
+.purple{color:var(--purple)}
+.network-bar{
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+  background:#0d0f17;
+  padding:25px 0;
+}
+.network-inner{
+  display:flex;align-items:center;
+  justify-content:space-between;
+  gap:20px;flex-wrap:wrap;
+}
+.network-item{
+  color:#a2a5b9;font-size:12px;
+  font-weight:700;letter-spacing:1px;
+}
+.network-item strong{color:white}
+
+/* SECTIONS */
+section{scroll-margin-top:100px}
+.section{padding:115px 0}
+.section-tag{
+  color:var(--green);font-size:11px;
+  font-weight:800;letter-spacing:3px;
+  text-transform:uppercase;margin-bottom:20px;
+}
+.section-title{
+  font-family:"Space Grotesk";
+  font-size:clamp(32px,4vw,53px);
+  letter-spacing:-2px;line-height:1.12;
+  margin:0 0 20px;
+}
+.section-description{
+  max-width:650px;line-height:1.85;
+  font-size:15px;color:var(--muted);
+}
+.cards-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:20px;margin-top:50px;
+}
+.feature-card{
+  position:relative;overflow:hidden;
+  padding:34px;
+  background:linear-gradient(140deg,#171824,#10111b);
+  border:1px solid var(--border);
+  border-radius:19px;
+  min-height:270px;
+  transition:.3s;
+}
+.feature-card:hover{
+  transform:translateY(-8px);
+  border-color:rgba(167,123,255,.45);
+  box-shadow:0 25px 70px rgba(0,0,0,.25);
+}
+.feature-card:after{
+  content:"";position:absolute;
+  right:-100px;top:-100px;
+  width:220px;height:220px;
+  border-radius:50%;background:var(--purple);
+  filter:blur(100px);opacity:.12;
+}
+.feature-icon{
+  width:57px;height:57px;
+  display:grid;place-items:center;
+  border-radius:15px;
+  background:linear-gradient(135deg,rgba(131,251,194,.13),rgba(167,123,255,.2));
+  font-size:26px;margin-bottom:25px;
+}
+.feature-card h3{font-size:19px;margin:0 0 14px}
+.feature-card p{
+  font-size:13px;color:var(--muted);
+  line-height:1.9;margin:0;
+}
+
+/* LIVE DASHBOARD */
+.dashboard-section{
+  position:relative;
+  background:linear-gradient(#0a0b12,#0f101b);
+}
+.dashboard-header{
+  display:flex;justify-content:space-between;
+  align-items:end;gap:20px;
+  margin-bottom:35px;
+}
+.live-pill{
+  font-size:11px;font-weight:700;
+  color:var(--green);
+  padding:10px 15px;
+  background:rgba(131,251,194,.08);
+  border:1px solid rgba(131,251,194,.2);
+  border-radius:50px;
+}
+.stats-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  gap:16px;
+}
+.stat-card{
+  padding:28px;
+  background:#151723;
+  border:1px solid var(--border);
+  border-radius:15px;
+}
+.stat-card span{
+  display:block;color:#9297aa;
+  font-size:11px;margin-bottom:20px;
+  text-transform:uppercase;
+  letter-spacing:1.1px;
+}
+.stat-card strong{
+  font-family:"Space Grotesk";
+  font-size:clamp(19px,2.2vw,29px);
+  overflow-wrap:anywhere;
+}
+.stat-card small{
+  display:block;color:var(--muted);
+  margin-top:14px;font-size:11px;
+}
+.dashboard-bottom{
+  display:grid;
+  grid-template-columns:1.3fr .7fr;
+  gap:20px;margin-top:20px;
+}
+.panel{
+  background:#141622;
+  border:1px solid var(--border);
+  border-radius:17px;
+  padding:30px;
+  min-width:0;
+}
+.panel-heading{
+  display:flex;align-items:center;
+  justify-content:space-between;
+  margin-bottom:25px;gap:12px;
+}
+.panel h3{font-size:17px;margin:0}
+.small-muted{font-size:11px;color:var(--muted)}
+.contract-row{
+  display:flex;justify-content:space-between;
+  gap:15px;align-items:center;
+  padding:15px 0;border-bottom:1px solid var(--border);
+}
+.contract-row:last-child{border:0}
+.contract-row span{color:#9498ac;font-size:12px}
+.contract-row strong{
+  font-size:12px;overflow-wrap:anywhere;
+  text-align:right;
+}
+.contract-copy{
+  display:flex;align-items:center;gap:8px;
+  max-width:100%;
+}
+.copy-btn{
+  background:#222536;color:var(--green);
+  border:1px solid var(--border);
+  border-radius:7px;padding:8px 10px;
+  font-size:11px;
+}
+.chart-visual{
+  height:210px;position:relative;
+  display:flex;align-items:center;
+  justify-content:center;overflow:hidden;
+}
+.chain-art{
+  width:175px;height:175px;
+  border-radius:50%;
+  border:25px solid rgba(167,123,255,.65);
+  box-shadow:0 0 60px rgba(167,123,255,.13);
+  transform:rotate(-30deg);
+}
+.chain-art:after{
+  content:"";display:block;
+  width:100%;height:100%;
+  border-radius:50%;
+  border:20px solid rgba(131,251,194,.7);
+  transform:translate(35px,-35px);
+}
+.panel-note{
+  color:var(--muted);
+  font-size:12px;line-height:1.8;
+}
+
+/* EXPLORER */
+.explorer-section{background:#090a11}
+.explorer-box{
+  margin-top:45px;padding:30px;
+  background:linear-gradient(135deg,#171923,#10121c);
+  border:1px solid var(--border);
+  border-radius:20px;
+}
+.explorer-tabs{
+  display:flex;gap:10px;
+  flex-wrap:wrap;margin-bottom:30px;
+}
+.tab{
+  padding:12px 20px;border-radius:9px;
+  color:#a9acbc;background:#1c1f2e;
+  border:1px solid transparent;
+  font-size:12px;font-weight:700;
+}
+.tab.active{
+  background:rgba(131,251,194,.1);
+  color:var(--green);
+  border-color:rgba(131,251,194,.25);
+}
+.search-shell{
+  display:flex;gap:12px;
+  background:#0d0f19;
+  border:1px solid rgba(255,255,255,.1);
+  padding:9px;border-radius:13px;
+}
+.search-shell input{
+  flex:1;min-width:0;
+  border:0;outline:0;
+  background:transparent;
+  color:white;padding:14px;
+  font-size:14px;
+}
+.search-shell button{white-space:nowrap}
+.explorer-results{
+  margin-top:25px;
+  border:1px solid var(--border);
+  border-radius:12px;overflow:hidden;
+}
+.result-row{
+  display:grid;
+  grid-template-columns:180px 1fr;
+  padding:18px 20px;
+  border-bottom:1px solid var(--border);
+  gap:15px;font-size:12px;
+}
+.result-row:last-child{border:0}
+.result-row span{color:var(--muted)}
+.result-row strong{
+  overflow-wrap:anywhere;font-weight:600;
+}
+.explorer-actions{
+  display:flex;gap:12px;
+  margin-top:25px;flex-wrap:wrap;
+}
+.explorer-frame-wrap{
+  margin-top:24px;
+  background:#0d0f19;border-radius:12px;
+  overflow:hidden;border:1px solid var(--border);
+}
+.explorer-frame-bar{
+  padding:14px 18px;
+  display:flex;justify-content:space-between;
+  align-items:center;gap:10px;
+  color:var(--muted);font-size:11px;
+}
+.explorer-frame{
+  width:100%;height:430px;
+  border:0;background:#0d0f19;
+}
+.frame-notice{
+  padding:15px 18px;color:var(--muted);
+  font-size:11px;line-height:1.7;
+}
+
+/* TOKENOMICS */
+.tokenomics-layout{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:70px;align-items:center;
+  margin-top:50px;
+}
+.token-circle{
+  width:340px;height:340px;
+  max-width:100%;margin:auto;
+  border-radius:50%;
+  background:conic-gradient(
+   var(--green) 0 28%,
+   var(--cyan) 28% 54%,
+   var(--purple) 54% 80%,
+   #595a88 80% 100%
+  );
+  padding:29px;
+  box-shadow:0 0 90px rgba(167,123,255,.12);
+}
+.token-circle-inner{
+  width:100%;height:100%;border-radius:50%;
+  background:#0b0c15;
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  text-align:center;
+}
+.token-circle-inner small{
+  font-size:12px;color:var(--muted);
+  letter-spacing:1px;
+}
+.token-circle-inner strong{
+  font-size:31px;font-family:"Space Grotesk";
+  margin-top:10px;
+}
+.token-circle-inner span{
+  font-size:11px;color:var(--green);
+  margin-top:8px;
+}
+.token-list{display:grid;gap:15px}
+.token-list-item{
+  display:flex;justify-content:space-between;
+  align-items:center;
+  background:#141622;
+  border:1px solid var(--border);
+  border-radius:11px;padding:19px;
+}
+.token-list-item span{
+  color:var(--muted);font-size:13px;
+}
+.token-list-item strong{font-size:14px}
+.token-dot{
+  width:9px;height:9px;border-radius:50%;
+  display:inline-block;margin-right:10px;
+}
+.disclaimer{
+  padding:17px;
+  background:rgba(167,123,255,.055);
+  border:1px solid rgba(167,123,255,.2);
+  border-radius:10px;
+  font-size:12px;color:#b4b5c6;
+  line-height:1.8;margin-top:15px;
+}
+
+/* ROADMAP */
+.roadmap-section{
+  background:linear-gradient(180deg,#0e1019,#08080e);
+}
+.roadmap-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  gap:18px;margin-top:55px;
+}
+.roadmap-card{
+  padding:30px;
+  border:1px solid var(--border);
+  background:#151722;
+  border-radius:16px;
+}
+.roadmap-number{
+  font-family:"Space Grotesk";
+  font-size:45px;color:rgba(167,123,255,.4);
+  margin-bottom:20px;
+}
+.roadmap-card h3{font-size:17px}
+.roadmap-card ul{
+  padding-left:16px;color:#a2a6b8;
+  font-size:12px;line-height:2.4;
+}
+.roadmap-card li::marker{color:var(--green)}
+
+/* WALLET */
+.wallet-section{padding:115px 0}
+.wallet-cta{
+  position:relative;
+  padding:80px 35px;text-align:center;
+  border-radius:25px;
+  overflow:hidden;
+  background:
+   radial-gradient(circle at 20% 50%,rgba(131,251,194,.15),transparent 45%),
+   radial-gradient(circle at 85% 45%,rgba(167,123,255,.23),transparent 45%),
+   #141522;
+  border:1px solid rgba(167,123,255,.25);
+}
+.wallet-cta h2{
+  font-family:"Space Grotesk";
+  font-size:clamp(30px,4vw,53px);
+  letter-spacing:-2px;
+  margin:0 0 20px;
+}
+.wallet-cta p{
+  color:#aeb1c2;font-size:14px;
+  max-width:550px;margin:0 auto 30px;
+  line-height:1.9;
+}
+.wallet-info{
+  margin:30px auto 0;max-width:700px;
+  text-align:left;
+  background:rgba(0,0,0,.23);
+  border:1px solid var(--border);
+  border-radius:12px;padding:20px;
+  display:none;
+}
+.wallet-info.show{display:block}
+.wallet-info p{margin:8px 0;font-size:12px;overflow-wrap:anywhere}
+.wallet-buttons{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+footer{
+  padding:65px 0 30px;
+  border-top:1px solid var(--border);
+  background:#090910;
+}
+.footer-grid{
+  display:grid;grid-template-columns:2fr 1fr 1fr;
+  gap:50px;
+}
+.footer-description{
+  color:var(--muted);
+  font-size:12px;line-height:1.9;
+  max-width:360px;
+}
+.footer-links{display:grid;gap:15px;margin-top:18px}
+.footer-links a{
+  color:var(--muted);font-size:12px;
+}
+.footer-links a:hover{color:var(--green)}
+.footer-bottom{
+  display:flex;justify-content:space-between;
+  gap:20px;flex-wrap:wrap;
+  border-top:1px solid var(--border);
+  padding-top:28px;margin-top:55px;
+  color:#777b8d;font-size:11px;
+}
+
+/* TOAST AND MODAL */
+.toast{
+  position:fixed;
+  right:22px;bottom:25px;
+  z-index:5000;
+  padding:15px 22px;
+  background:#1a2030;color:white;
+  border:1px solid rgba(131,251,194,.3);
+  box-shadow:0 20px 50px #0008;
+  border-radius:12px;
+  font-size:13px;
+  max-width:min(370px,calc(100vw - 40px));
+  opacity:0;transform:translateY(20px);
+  pointer-events:none;transition:.3s;
+}
+.toast.show{opacity:1;transform:translateY(0)}
+.modal-overlay{
+  position:fixed;inset:0;
+  z-index:4000;
+  background:rgba(0,0,0,.8);
+  backdrop-filter:blur(12px);
+  display:none;place-items:center;
+  padding:20px;
+}
+.modal-overlay.show{display:grid}
+.modal{
+  width:100%;max-width:430px;
+  background:#171925;
+  border:1px solid rgba(167,123,255,.3);
+  border-radius:20px;padding:30px;
+}
+.modal-header{
+  display:flex;align-items:center;
+  justify-content:space-between;
+  margin-bottom:25px;
+}
+.modal-header h3{margin:0}
+.close-modal{
+  background:transparent;border:0;
+  color:white;font-size:26px;
+}
+.wallet-option{
+  width:100%;padding:18px;
+  border:1px solid var(--border);
+  border-radius:12px;background:#212332;
+  color:white;text-align:left;
+  margin-bottom:12px;font-weight:700;
+  display:flex;justify-content:space-between;
+}
+.wallet-option:hover{border-color:var(--green)}
+.modal-note{font-size:11px;color:var(--muted);line-height:1.8}
+
+/* RESPONSIVE */
+@media(max-width:1100px){
+  .nav-links{gap:15px}
+  .nav-links a{font-size:11px}
+  .hero h1{font-size:65px}
+  .stats-grid{grid-template-columns:repeat(2,1fr)}
+  .roadmap-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:850px){
+  .nav-links{
+    position:absolute;top:84px;left:0;
+    width:100%;padding:26px;
+    display:none;flex-direction:column;
+    align-items:flex-start;background:#11131e;
+    border-bottom:1px solid var(--border);
+  }
+  .nav-links.open{display:flex}
+  .mobile-toggle{display:block}
+  .nav-actions .btn{padding:11px 14px;font-size:11px}
+  .hero{padding:155px 0 65px}
+  .hero-layout{grid-template-columns:1fr}
+  .hero-visual{height:440px}
+  .hero h1{font-size:clamp(48px,9vw,77px)}
+  .cards-grid{grid-template-columns:repeat(2,1fr)}
+  .dashboard-bottom{grid-template-columns:1fr}
+  .tokenomics-layout{grid-template-columns:1fr;gap:40px}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .footer-grid>div:first-child{grid-column:span 2}
+}
+@media(max-width:560px){
+  .container{padding:0 18px}
+  .nav{min-height:73px}
+  .nav-links{top:73px}
+  .brand-icon{width:40px;height:40px}
+  .brand-name{font-size:21px}
+  .hero{padding:135px 0 55px}
+  .hero h1{letter-spacing:-2.7px}
+  .hero p{font-size:14px}
+  .hero-bottom{gap:20px}
+  .stat-separator{display:none}
+  .hero-visual{height:370px}
+  .orb-core{width:225px;height:225px}
+  .orbit{width:300px;height:300px}
+  .orbit-two{width:340px;height:340px}
+  .floating-label{padding:11px}
+  .float-one{top:20px;left:0}
+  .float-two{bottom:22px;right:0}
+  .floating-label strong{font-size:12px}
+  .section{padding:75px 0}
+  .cards-grid,.stats-grid,.roadmap-grid{grid-template-columns:1fr}
+  .dashboard-header{align-items:flex-start;flex-direction:column}
+  .panel,.explorer-box{padding:19px}
+  .result-row{grid-template-columns:1fr;gap:5px}
+  .contract-row{align-items:flex-start;flex-direction:column}
+  .contract-row strong{text-align:left}
+  .search-shell{flex-direction:column}
+  .search-shell button{width:100%}
+  .explorer-frame{height:360px}
+  .token-circle{width:270px;height:270px}
+  .wallet-cta{padding:55px 20px}
+  .footer-grid{grid-template-columns:1fr}
+  .footer-grid>div:first-child{grid-column:span 1}
+  .nav-actions .btn{max-width:120px;overflow:hidden;text-overflow:ellipsis}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{
+    animation-duration:.01ms!important;
+    transition-duration:.01ms!important;
+    scroll-behavior:auto!important;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="container nav">
+    <a href="#home" class="brand">
+      <div class="brand-icon">
+        <img class="avron-logo" alt="AVRON Logo">
+      </div>
+      <div class="brand-name">AVRON</div>
+    </a>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#home">Home</a>
+      <a href="#ecosystem">Ecosystem</a>
+      <a href="#dashboard">Dashboard</a>
+      <a href="#explorer">Explorer</a>
+      <a href="#tokenomics">Tokenomics</a>
+      <a href="#roadmap">Roadmap</a>
+      <a href="#wallet">Wallet</a>
+    </nav>
+
+    <div class="nav-actions">
+      <button class="btn btn-primary" id="headerWalletBtn" onclick="openWalletModal()">Connect Wallet</button>
+      <button class="mobile-toggle" onclick="toggleMenu()" aria-label="Toggle navigation">☰</button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<section class="hero" id="home">
+  <div class="grid-bg"></div>
+  <div class="glow-one"></div>
+  <div class="glow-two"></div>
+
+  <div class="container hero-layout">
+    <div>
+      <div class="eyebrow"><span class="dot"></span> THE NEXT DIMENSION OF WEB3</div>
+      <h1>
+        BEYOND<br>
+        THE <span class="gradient-text">CHAIN.</span><br>
+        BEYOND<br>
+        LIMITS.
+      </h1>
+      <p>
+        Meet AVRON — a digital asset experience built around
+        connectivity, transparency and decentralized innovation.
+        Explore a new vision of Web3 on BNB Smart Chain.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#explorer" class="btn btn-primary">Explore AVRON ↗</a>
+        <button class="btn btn-outline" onclick="openWalletModal()">Connect Your Wallet</button>
+      </div>
+
+      <div class="hero-bottom">
+        <div class="hero-stat">
+          <strong>BNB Chain</strong>
+          <small>Network</small>
+        </div>
+        <div class="stat-separator"></div>
+        <div class="hero-stat">
+          <strong>303? No</strong>
+          <small>Chain ID: 56</small>
+        </div>
+        <div class="stat-separator"></div>
+        <div class="hero-stat">
+          <strong class="green">Web3</strong>
+          <small>Digital Asset</small>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="orbit"></div>
+      <div class="orbit orbit-two"></div>
+
+      <div class="orb-core">
+        <img class="avron-logo" alt="AVRON token artwork">
+      </div>
+
+      <div class="floating-label float-one">
+        <small>NETWORK</small>
+        <strong class="green">● BSC Mainnet</strong>
+      </div>
+
+      <div class="floating-label float-two">
+        <small>WEB3 ACCESS</small>
+        <strong class="purple">Decentralized Future ↗</strong>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="network-bar">
+  <div class="container network-inner">
+    <div class="network-item">POWERED BY <strong>BNB SMART CHAIN</strong></div>
+    <div class="network-item">TOKEN <strong>AVRON</strong></div>
+    <div class="network-item">STANDARD <strong>BEP-20</strong></div>
+    <div class="network-item">NETWORK ID <strong>56</strong></div>
+    <div class="network-item"><span class="green">●</span> <strong>WEB3 ENABLED</strong></div>
+  </div>
+</div>
+
+<section class="section" id="ecosystem">
+  <div class="container">
+    <div class="section-tag">01 / THE ECOSYSTEM</div>
+    <h2 class="section-title">BUILT FOR A <span class="gradient-text">NEW ERA.</span></h2>
+    <p class="section-description">
+      AVRON presents an evolving Web3 vision with a focus on accessible
+      blockchain interactions, transparency and a seamless digital experience.
+    </p>
+
+    <div class="cards-grid">
+      <div class="feature-card">
+        <div class="feature-icon">◈</div>
+        <h3>Decentralized Foundation</h3>
+        <p>Interact with AVRON through BNB Smart Chain's public blockchain infrastructure and compatible decentralized wallets.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">⌁</div>
+        <h3>Web3 Connectivity</h3>
+        <p>Connect supported wallets, view balances, switch networks and add AVRON to your wallet from one interface.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">⬡</div>
+        <h3>On-Chain Transparency</h3>
+        <p>Access contract information and verify transactions directly through BscScan, the BNB Smart Chain block explorer.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">◎</div>
+        <h3>Digital Ownership</h3>
+        <p>Manage your own blockchain account through self-custodial wallets without giving the website control of your private keys.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">✦</div>
+        <h3>Unified Experience</h3>
+        <p>A mobile-first interface that brings token information, wallet access and blockchain exploration together.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">∞</div>
+        <h3>Future-Ready Vision</h3>
+        <p>A flexible ecosystem concept designed to evolve as new utilities, partnerships and community initiatives are developed.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section dashboard-section" id="dashboard">
+  <div class="container">
+    <div class="dashboard-header">
+      <div>
+        <div class="section-tag">02 / ON-CHAIN INTELLIGENCE</div>
+        <h2 class="section-title">LIVE <span class="gradient-text">DASHBOARD.</span></h2>
+        <p class="section-description">Token information retrieved from public BNB Smart Chain RPC infrastructure.</p>
+      </div>
+      <div class="live-pill" id="rpcStatus">● Connecting to BSC...</div>
+    </div>
+
+    <div class="stats-grid">
+      <div class="stat-card">
+        <span>Token Name</span>
+        <strong id="tokenName">AVRON</strong>
+        <small>ERC-20 compatible asset</small>
+      </div>
+      <div class="stat-card">
+        <span>Total Supply</span>
+        <strong id="tokenSupply">Loading...</strong>
+        <small>Read from smart contract</small>
+      </div>
+      <div class="stat-card">
+        <span>Latest BSC Block</span>
+        <strong id="latestBlock">Loading...</strong>
+        <small>Public blockchain</small>
+      </div>
+      <div class="stat-card">
+        <span>Token Symbol</span>
+        <strong id="tokenSymbol">AVRON</strong>
+        <small id="tokenDecimals">Checking decimals...</small>
+      </div>
+    </div>
+
+    <div class="dashboard-bottom">
+      <div class="panel">
+        <div class="panel-heading">
+          <h3>Smart Contract Information</h3>
+          <span class="small-muted">BNB Smart Chain</span>
+        </div>
+        <div class="contract-row">
+          <span>Token Contract</span>
+          <div class="contract-copy">
+            <strong id="contractShort">0x38eE...e9Ea</strong>
+            <button class="copy-btn" onclick="copyContract()">COPY</button>
+          </div>
+        </div>
+        <div class="contract-row">
+          <span>Chain ID</span><strong>56</strong>
+        </div>
+        <div class="contract-row">
+          <span>Token Standard</span><strong>BEP-20</strong>
+        </div>
+        <div class="contract-row">
+          <span>RPC Status</span><strong id="rpcDetail">Connecting...</strong>
+        </div>
+        <div class="contract-row">
+          <span>Contract Link</span>
+          <a id="contractLink" target="_blank" rel="noopener noreferrer" class="green">View on BscScan ↗</a>
+        </div>
+        <div style="margin-top:24px">
+          <button class="btn btn-primary" onclick="addTokenToWallet()">+ Add AVRON to Wallet</button>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-heading">
+          <h3>Network Visualization</h3>
+          <span class="small-muted">Digital Infrastructure</span>
+        </div>
+        <div class="chart-visual">
+          <div class="chain-art"></div>
+        </div>
+        <p class="panel-note">
+          AVRON is deployed on BNB Smart Chain. Blockchain data is public
+          and independently verifiable through the network.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section explorer-section" id="explorer">
+  <div class="container">
+    <div class="section-tag">03 / BLOCKCHAIN EXPLORER</div>
+    <h2 class="section-title">EXPLORE THE <span class="gradient-text">BLOCKCHAIN.</span></h2>
+    <p class="section-description">
+      Search transaction hashes, wallet addresses and blocks.
+      Get an integrated AVRON blockchain overview with direct BscScan access.
+    </p>
+
+    <div class="explorer-box">
+      <div class="explorer-tabs">
+        <button class="tab active" data-type="transaction" onclick="selectExplorerTab(this)">Transactions</button>
+        <button class="tab" data-type="address" onclick="selectExplorerTab(this)">Addresses</button>
+        <button class="tab" data-type="block" onclick="selectExplorerTab(this)">Blocks</button>
+        <button class="tab" data-type="token" onclick="selectExplorerTab(this)">Token</button>
+      </div>
+
+      <div class="search-shell">
+        <input id="explorerInput" placeholder="Enter a transaction hash (0x...)" autocomplete="off">
+        <button class="btn btn-primary" onclick="explorerSearch()">Search Explorer ↗</button>
+      </div>
+
+      <div class="explorer-results">
+        <div class="result-row"><span>Network</span><strong>BNB Smart Chain Mainnet</strong></div>
+        <div class="result-row"><span>Token</span><strong>AVRON</strong></div>
+        <div class="result-row"><span>Contract Address</span><strong>0x38eE997ef54397e428D45399Db92E9b07643e9Ea</strong></div>
+        <div class="result-row"><span>Explorer Provider</span><strong>BscScan</strong></div>
+        <div class="result-row"><span>Search Type</span><strong id="currentSearchType">Transaction Hash</strong></div>
+      </div>
+
+      <div class="explorer-actions">
+        <a class="btn btn-primary" id="viewContractExplorer" target="_blank" rel="noopener noreferrer">View AVRON Contract ↗</a>
+        <a class="btn btn-outline" href="https://bscscan.com" target="_blank" rel="noopener noreferrer">Open BscScan ↗</a>
+      </div>
+
+      <div class="explorer-frame-wrap">
+        <div class="explorer-frame-bar">
+          <span>EXTERNAL EXPLORER PREVIEW</span>
+          <a id="frameOpenLink" target="_blank" rel="noopener noreferrer" class="green">Open Full Page ↗</a>
+        </div>
+
+        <iframe
+          class="explorer-frame"
+          id="explorerFrame"
+          title="BscScan Explorer Preview"
+          loading="lazy"
+          referrerpolicy="strict-origin-when-cross-origin">
+        </iframe>
+
+        <div class="frame-notice">
+          BscScan may restrict third-party embedding. If the preview is blocked,
+          use “Open Full Page” for full transaction histories, holders, analytics and contract verification.
+          This is not a native BscScan clone.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="tokenomics">
+  <div class="container">
+    <div class="section-tag">04 / TOKEN OVERVIEW</div>
+    <h2 class="section-title">POWERED BY <span class="gradient-text">AVRON.</span></h2>
+    <p class="section-description">
+      Built on BNB Smart Chain, AVRON uses a token infrastructure compatible
+      with the wider EVM ecosystem.
+    </p>
+
+    <div class="tokenomics-layout">
+      <div>
+        <div class="token-circle">
+          <div class="token-circle-inner">
+            <small>TOTAL SUPPLY</small>
+            <strong id="circleSupply">—</strong>
+            <span>AVRON TOKENS</span>
+          </div>
+        </div>
+        <div class="disclaimer">
+          The colored ring is decorative and does not represent actual token allocations.
+          Token distribution, vesting and circulating supply must be verified from official records.
+        </div>
+      </div>
+
+      <div class="token-list">
+        <div class="token-list-item">
+          <span><i class="token-dot" style="background:#83fbc2"></i>Token Name</span>
+          <strong>AVRON</strong>
+        </div>
+        <div class="token-list-item">
+          <span><i class="token-dot" style="background:#61e4f2"></i>Network</span>
+          <strong>BNB Smart Chain</strong>
+        </div>
+        <div class="token-list-item">
+          <span><i class="token-dot" style="background:#a77bff"></i>Token Standard</span>
+          <strong>BEP-20</strong>
+        </div>
+        <div class="token-list-item">
+          <span><i class="token-dot" style="background:#595a88"></i>Total Supply</span>
+          <strong id="listSupply">Loading...</strong>
+        </div>
+        <div class="token-list-item">
+          <span>Circulating Supply</span>
+          <strong>Not verified</strong>
+        </div>
+        <div class="token-list-item">
+          <span>Smart Contract</span>
+          <strong>Public / BSC</strong>
+        </div>
+        <a href="#explorer" class="btn btn-outline" style="margin-top:10px">
+          Verify Token Details ↗
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section roadmap-section" id="roadmap">
+  <div class="container">
+    <div class="section-tag">05 / THE FUTURE</div>
+    <h2 class="section-title">THE ROAD <span class="gradient-text">AHEAD.</span></h2>
+    <p class="section-description">
+      A proposed direction for AVRON's ecosystem development.
+      Future milestones are conceptual and do not represent completed or guaranteed deliverables.
+    </p>
+
+    <div class="roadmap-grid">
+      <div class="roadmap-card">
+        <div class="roadmap-number">01</div>
+        <h3>Foundation</h3>
+        <ul>
+          <li>Brand identity</li>
+          <li>Web3 website</li>
+          <li>Smart contract visibility</li>
+          <li>Community channels</li>
+        </ul>
+      </div>
+      <div class="roadmap-card">
+        <div class="roadmap-number">02</div>
+        <h3>Expansion</h3>
+        <ul>
+          <li>Community growth</li>
+          <li>Token analytics</li>
+          <li>DEX integrations</li>
+          <li>Public documentation</li>
+        </ul>
+      </div>
+      <div class="roadmap-card">
+        <div class="roadmap-number">03</div>
+        <h3>Ecosystem</h3>
+        <ul>
+          <li>Web3 utilities</li>
+          <li>Community governance research</li>
+          <li>Partner integrations</li>
+          <li>Developer resources</li>
+        </ul>
+      </div>
+      <div class="roadmap-card">
+        <div class="roadmap-number">04</div>
+        <h3>Beyond</h3>
+        <ul>
+          <li>Ecosystem scalability</li>
+          <li>New decentralized tools</li>
+          <li>Long-term sustainability</li>
+          <li>Global accessibility</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="wallet-section" id="wallet">
+  <div class="container">
+    <div class="wallet-cta">
+      <div class="section-tag">06 / ENTER WEB3</div>
+      <h2>YOUR WALLET.<br><span class="gradient-text">YOUR UNIVERSE.</span></h2>
+      <p>
+        Connect a supported self-custodial wallet, switch to BNB Smart Chain
+        and manage AVRON through your own blockchain account.
+      </p>
+      <div class="wallet-buttons">
+        <button class="btn btn-primary" onclick="openWalletModal()">Connect Wallet ↗</button>
+        <button class="btn btn-outline" onclick="addTokenToWallet()">Add AVRON Token +</button>
+        <button class="btn btn-outline" onclick="disconnectWallet()">Disconnect</button>
+      </div>
+
+      <div id="walletInfo" class="wallet-info">
+        <p><strong class="green">Wallet Connected</strong></p>
+        <p id="walletAddress">Address: —</p>
+        <p id="walletChain">Network: —</p>
+        <p id="walletBNB">BNB Balance: —</p>
+        <p id="walletAVRON">AVRON Balance: —</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a href="#home" class="brand">
+          <div class="brand-icon"><img class="avron-logo" alt="AVRON"></div>
+          <div class="brand-name">AVRON</div>
+        </a>
+        <p class="footer-description">
+          Beyond the Chain. Beyond Limits.<br>
+          Explore decentralized innovation through AVRON,
+          an EVM-compatible digital asset on BNB Smart Chain.
+        </p>
+      </div>
+
+      <div>
+        <strong>Explore</strong>
+        <div class="footer-links">
+          <a href="#ecosystem">Ecosystem</a>
+          <a href="#dashboard">Dashboard</a>
+          <a href="#explorer">Blockchain Explorer</a>
+          <a href="#tokenomics">Token Overview</a>
+        </div>
+      </div>
+
+      <div>
+        <strong>Resources</strong>
+        <div class="footer-links">
+          <a id="footerContract" target="_blank" rel="noopener noreferrer">Smart Contract</a>
+          <a href="https://bscscan.com" target="_blank" rel="noopener noreferrer">BscScan</a>
+          <a href="#roadmap">Roadmap</a>
+          <a href="#wallet">Connect Wallet</a>
+          <a href="https://github.com/axionteam645/AVRON" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> AVRON. All rights reserved.</span>
+      <span>Built for Web3 • Powered by BNB Smart Chain</span>
+      <span>Digital assets involve risk. Nothing on this site is financial advice.</span>
+    </div>
+  </div>
+</footer>
+
+<div class="modal-overlay" id="walletModal" role="dialog" aria-modal="true" aria-labelledby="walletModalTitle">
+  <div class="modal">
+    <div class="modal-header">
+      <h3 id="walletModalTitle">Connect Wallet</h3>
+      <button class="close-modal" onclick="closeWalletModal()" aria-label="Close">×</button>
+    </div>
+
+    <button class="wallet-option" onclick="connectWallet('metamask')">
+      <span>🦊 MetaMask</span><span>↗</span>
+    </button>
+
+    <button class="wallet-option" onclick="connectWallet('trust')">
+      <span>🛡 Trust Wallet</span><span>↗</span>
+    </button>
+
+    <button class="wallet-option" onclick="connectWallet('injected')">
+      <span>◈ Browser Web3 Wallet</span><span>↗</span>
+    </button>
+
+    <p class="modal-note">
+      Wallet connection requires a compatible installed wallet or a Web3-enabled browser.
+      AVRON never asks for your recovery phrase or private keys.
+    </p>
+  </div>
+</div>
+
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+<script>
+"use strict";
+
+/* =======================================
+   AVRON CONFIGURATION
+======================================= */
+
+const CONFIG = Object.freeze({
+  name: "AVRON",
+  symbol: "AVRON",
+  chainId: 56,
+  chainHex: "0x38",
+  contract: "0x38eE997ef54397e428D45399Db92E9b07643e9Ea",
+  logo: "https://raw.githubusercontent.com/axionteam645/AVRON/main/AVRON.png",
+  rpcUrls: [
+    "https://bsc-dataseed.binance.org/",
+    "https://bsc-dataseed1.defibit.io/",
+    "https://bsc-dataseed1.ninicoin.io/"
+  ],
+  explorer: "https://bscscan.com"
+});
+
+const CONTRACT = CONFIG.contract;
+const CONTRACT_URL = CONFIG.explorer + "/token/" + CONTRACT;
+const ZERO_ADDRESS = "0x0000000000000000000000000000000000000000";
+
+let activeProvider = null;
+let connectedAddress = null;
+let tokenDecimals = 18;
+let verifiedTokenSymbol = null;
+let activeExplorerType = "transaction";
+let cachedRpc = null;
+let toastTimer = null;
+let walletSession = 0;
+let rpcId = 0;
+
+function $(id){ return document.getElementById(id); }
+
+function toast(message){
+  const el = $("toast");
+  el.textContent = message;
+  el.classList.add("show");
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => el.classList.remove("show"), 4300);
+}
+
+function toggleMenu(){
+  $("navLinks").classList.toggle("open");
+}
+
+document.querySelectorAll(".nav-links a").forEach(a => {
+  a.addEventListener("click", () => $("navLinks").classList.remove("open"));
+});
+
+document.querySelectorAll(".avron-logo").forEach(img => {
+  img.src = CONFIG.logo;
+  img.onerror = () => {
+    img.style.display = "none";
+    if (img.parentElement && !img.parentElement.querySelector(".logo-fallback")){
+      const fallback = document.createElement("span");
+      fallback.className = "logo-fallback";
+      fallback.textContent = "A";
+      fallback.style.cssText = "font-weight:900;font-size:30px;color:#83fbc2;";
+      img.parentElement.appendChild(fallback);
+    }
+  };
+});
+
+$("year").textContent = new Date().getFullYear();
+$("contractShort").textContent = CONTRACT.slice(0,10) + "..." + CONTRACT.slice(-7);
+$("contractLink").href = CONTRACT_URL;
+$("viewContractExplorer").href = CONTRACT_URL;
+$("footerContract").href = CONFIG.explorer + "/address/" + CONTRACT;
+$("frameOpenLink").href = CONTRACT_URL;
+$("explorerFrame").src = CONTRACT_URL;
+
+/* =======================================
+   CLIPBOARD
+======================================= */
+
+async function copyContract(){
+  try{
+    await navigator.clipboard.writeText(CONTRACT);
+    toast("Contract address copied!");
+  }catch(e){
+    const input = document.createElement("textarea");
+    input.value = CONTRACT;
+    document.body.appendChild(input);
+    input.select();
+    const copied = document.execCommand("copy");
+    input.remove();
+    toast(copied ? "Contract address copied!" : "Please copy the displayed address manually.");
+  }
+}
+
+/* =======================================
+   RPC COMMUNICATION
+======================================= */
+
+async function rpcCall(method, params = [], endpoint = null){
+  const endpoints = endpoint ? [endpoint] : [
+    ...(cachedRpc ? [cachedRpc] : []),
+    ...CONFIG.rpcUrls.filter(url => url !== cachedRpc)
+  ];
+
+  let lastError;
+
+  for(const url of endpoints){
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 7000);
+
+    try{
+      const response = await fetch(url,{
+        method:"POST",
+        headers:{"Content-Type":"application/json"},
+        body:JSON.stringify({
+          jsonrpc:"2.0",
+          id:++rpcId,
+          method,
+          params
+        }),
+        signal:controller.signal
+      });
+
+      if(!response.ok) throw new Error("RPC HTTP " + response.status);
+      const data = await response.json();
+
+      if(data.error) throw new Error(data.error.message || "RPC error");
+      if(data.result === undefined || data.result === null){
+        throw new Error("Empty RPC result");
+      }
+
+      if(!endpoint) cachedRpc = url;
+      return data.result;
+
+    }catch(error){
+      lastError = error;
+      if(endpoint) break;
+    }finally{
+      clearTimeout(timeout);
+    }
+  }
+
+  throw lastError || new Error("RPC unavailable");
+}
+
+function strip0x(hex){return String(hex).replace(/^0x/i,"");}
+function pad64(value){return strip0x(value).padStart(64,"0");}
+function encodeAddress(address){return pad64(address.toLowerCase());}
+
+function formatUnits(raw, decimals = 18, fractionDigits = 4){
+  let value = BigInt(raw);
+  const divisor = 10n ** BigInt(decimals);
+  const whole = value / divisor;
+  const fractional = (value % divisor)
+    .toString()
+    .padStart(decimals,"0")
+    .slice(0,fractionDigits)
+    .replace(/0+$/,"");
+
+  const integerText = whole.toLocaleString("en-US");
+  return fractional ? integerText + "." + fractional : integerText;
+}
+
+function formatLargeAmount(raw, decimals = 18){
+  const digits = BigInt(raw);
+  const scale = 10n ** BigInt(decimals);
+  const whole = digits / scale;
+
+  if(whole >= 1000000000000n){
+    return formatCompactBigInt(digits,scale * 1000000000000n,"T");
+  }
+  if(whole >= 1000000000n){
+    return formatCompactBigInt(digits,scale * 1000000000n,"B");
+  }
+  if(whole >= 1000000n){
+    return formatCompactBigInt(digits,scale * 1000000n,"M");
+  }
+  return formatUnits(raw,decimals,2);
+}
+
+function formatCompactBigInt(raw,unit,suffix){
+  const whole = raw / unit;
+  const hundredths = (raw % unit) * 100n / unit;
+  return whole.toLocaleString("en-US")
+    + "." + hundredths.toString().padStart(2,"0")
+    + suffix;
+}
+
+function decodeABIString(hex){
+  if(!hex || hex === "0x") return null;
+  const data = strip0x(hex);
+
+  try{
+    let payload = "";
+
+    if(data.length >= 128 && BigInt("0x"+data.slice(0,64)) === 32n){
+      const length = Number(BigInt("0x"+data.slice(64,128)));
+      if(length > 1024) return null;
+      payload = data.slice(128,128+length*2);
+    }else{
+      payload = data.slice(0,64).replace(/(00)+$/,"");
+    }
+
+    const bytes = new Uint8Array(
+      payload.match(/.{1,2}/g)?.map(x=>parseInt(x,16)) || []
+    );
+    return new TextDecoder().decode(bytes).replace(/\0/g,"");
+
+  }catch(e){return null;}
+}
+
+async function contractCall(selector, argumentsHex = ""){
+  return rpcCall("eth_call",[{
+    to:CONTRACT,
+    data:selector + argumentsHex
+  },"latest"]);
+}
+
+async function loadBlockchainData(){
+  $("rpcStatus").textContent = "● Connecting to BSC...";
+  $("rpcDetail").textContent = "Connecting...";
+
+  const checks = await Promise.allSettled([
+    rpcCall("eth_blockNumber"),
+    rpcCall("eth_getCode",[CONTRACT,"latest"]),
+    contractCall("0x18160ddd"),
+    contractCall("0x313ce567"),
+    contractCall("0x95d89b41"),
+    contractCall("0x06fdde03")
+  ]);
+
+  if(checks[0].status === "fulfilled"){
+    $("latestBlock").textContent =
+      parseInt(checks[0].value,16).toLocaleString("en-US");
+    $("rpcStatus").textContent = "● BSC RPC Connected";
+    $("rpcDetail").textContent = "Online";
+  }else{
+    $("latestBlock").textContent = "Unavailable";
+    $("rpcStatus").textContent = "● RPC Unavailable";
+    $("rpcDetail").textContent = "Offline / Browser blocked";
+  }
+
+  const codeValid = checks[1].status === "fulfilled"
+    && checks[1].value !== "0x";
+
+  if(!codeValid){
+    $("tokenSupply").textContent = "Unavailable";
+    $("listSupply").textContent = "Unavailable";
+    $("circleSupply").textContent = "—";
+    $("tokenDecimals").textContent = "Not verified";
+    return;
+  }
+
+  if(checks[3].status === "fulfilled"){
+    const d = Number(BigInt(checks[3].value));
+    if(Number.isInteger(d) && d >= 0 && d <= 36){
+      tokenDecimals = d;
+      $("tokenDecimals").textContent = d + " decimals";
+    }
+  }
+
+  if(checks[4].status === "fulfilled"){
+    const symbol = decodeABIString(checks[4].value);
+    if(symbol && symbol.length < 32){
+      verifiedTokenSymbol = symbol;
+      $("tokenSymbol").textContent = symbol;
+    }
+  }
+
+  if(checks[5].status === "fulfilled"){
+    const name = decodeABIString(checks[5].value);
+    if(name && name.length < 70) $("tokenName").textContent = name;
+  }
+
+  if(checks[2].status === "fulfilled"){
+    const supply = BigInt(checks[2].value);
+    $("tokenSupply").textContent = formatLargeAmount(supply,tokenDecimals);
+    $("listSupply").textContent = formatUnits(supply,tokenDecimals,0);
+    $("circleSupply").textContent = formatLargeAmount(supply,tokenDecimals);
+  }else{
+    $("tokenSupply").textContent = "Unavailable";
+    $("listSupply").textContent = "Unavailable";
+    $("circleSupply").textContent = "—";
+  }
+}
+
+/* =======================================
+   EXPLORER
+======================================= */
+
+function selectExplorerTab(button){
+  document.querySelectorAll(".tab").forEach(x=>x.classList.remove("active"));
+  button.classList.add("active");
+
+  activeExplorerType = button.dataset.type;
+
+  const placeholders = {
+    transaction:"Enter a transaction hash (0x...)",
+    address:"Enter a BSC wallet or contract address (0x...)",
+    block:"Enter a block number",
+    token:"Enter a BEP-20 token contract address (0x...)"
+  };
+
+  const labels = {
+    transaction:"Transaction Hash",
+    address:"Wallet / Contract Address",
+    block:"Block Number",
+    token:"Token Contract"
+  };
+
+  $("explorerInput").value = "";
+  $("explorerInput").placeholder = placeholders[activeExplorerType];
+  $("currentSearchType").textContent = labels[activeExplorerType];
+}
+
+function explorerSearch(){
+  const value = $("explorerInput").value.trim();
+  if(!value){
+    toast("Please enter a search value.");
+    return;
+  }
+
+  let target;
+
+  if(activeExplorerType === "transaction"){
+    if(!/^0x[a-fA-F0-9]{64}$/.test(value)){
+      toast("Invalid transaction hash. Expected 0x followed by 64 hex characters.");
+      return;
+    }
+    target = CONFIG.explorer + "/tx/" + value;
+  }
+
+  if(activeExplorerType === "address" || activeExplorerType === "token"){
+    if(!/^0x[a-fA-F0-9]{40}$/.test(value)){
+      toast("Invalid address. Expected 0x followed by 40 hex characters.");
+      return;
+    }
+    target = CONFIG.explorer
+      + (activeExplorerType === "token" ? "/token/" : "/address/")
+      + value;
+  }
+
+  if(activeExplorerType === "block"){
+    if(!/^\d{1,15}$/.test(value)){
+      toast("Please enter a valid block number.");
+      return;
+    }
+    target = CONFIG.explorer + "/block/" + value;
+  }
+
+  if(target){
+    $("frameOpenLink").href = target;
+    $("explorerFrame").src = target;
+    window.open(target,"_blank","noopener,noreferrer");
+  }
+}
+
+$("explorerInput").addEventListener("keydown",e=>{
+  if(e.key === "Enter") explorerSearch();
+});
+
+/* =======================================
+   WALLET PROVIDERS
+======================================= */
+
+function findProvider(type){
+  const ethereum = window.ethereum;
+
+  if(!ethereum) return null;
+
+  const providers = ethereum.providers && ethereum.providers.length
+    ? ethereum.providers
+    : [ethereum];
+
+  if(type === "metamask"){
+    return providers.find(p => p.isMetaMask && !p.isTrust)
+      || (ethereum.isMetaMask && !ethereum.isTrust ? ethereum : null);
+  }
+
+  if(type === "trust"){
+    return providers.find(p => p.isTrust || p.isTrustWallet)
+      || (ethereum.isTrust ? ethereum : null);
+  }
+
+  return providers[0] || null;
+}
+
+function openWalletModal(){
+  $("walletModal").classList.add("show");
+}
+
+function closeWalletModal(){
+  $("walletModal").classList.remove("show");
+}
+
+$("walletModal").addEventListener("click",e=>{
+  if(e.target === $("walletModal")) closeWalletModal();
+});
+
+document.addEventListener("keydown",e=>{
+  if(e.key === "Escape") closeWalletModal();
+});
+
+function shortAddress(address){
+  return address.slice(0,6)+"..."+address.slice(-4);
+}
+
+async function ensureBSC(provider){
+  const current = await provider.request({method:"eth_chainId"});
+  if(parseInt(current,16) === CONFIG.chainId) return true;
+
+  try{
+    await provider.request({
+      method:"wallet_switchEthereumChain",
+      params:[{chainId:CONFIG.chainHex}]
+    });
+    return true;
+  }catch(error){
+    if(error.code === 4902 || error.data?.originalError?.code === 4902){
+      try{
+        await provider.request({
+          method:"wallet_addEthereumChain",
+          params:[{
+            chainId:CONFIG.chainHex,
+            chainName:"BNB Smart Chain Mainnet",
+            nativeCurrency:{
+              name:"BNB",symbol:"BNB",decimals:18
+            },
+            rpcUrls:[CONFIG.rpcUrls[0]],
+            blockExplorerUrls:[CONFIG.explorer]
+          }]
+        });
+        return true;
+      }catch(err){
+        toast("Could not add BNB Smart Chain.");
+        return false;
+      }
+    }
+    if(error.code === 4001){
+      toast("Network switch was declined.");
+    }else{
+      toast("Please switch your wallet to BNB Smart Chain.");
+    }
+    return false;
+  }
+}
+
+async function connectWallet(type){
+  const provider = findProvider(type);
+
+  if(!provider){
+    toast(
+      type === "metamask"
+        ? "MetaMask not detected. Install it or open this page in its wallet browser."
+        : type === "trust"
+          ? "Trust Wallet not detected. Use its built-in browser or an injected wallet."
+          : "No compatible injected Web3 wallet was found."
+    );
+    return;
+  }
+
+  try{
+    const accounts = await provider.request({
+      method:"eth_requestAccounts"
+    });
+
+    if(!accounts || !accounts.length){
+      toast("No wallet account was returned.");
+      return;
+    }
+
+    const switched = await ensureBSC(provider);
+    if(!switched) return;
+
+    if(activeProvider && activeProvider !== provider){
+      unregisterProviderEvents();
+    }
+
+    activeProvider = provider;
+    connectedAddress = accounts[0];
+    ++walletSession;
+
+    registerProviderEvents();
+    closeWalletModal();
+    updateWalletUI();
+    await refreshWalletData();
+
+    toast("Wallet connected successfully.");
+
+  }catch(error){
+    if(error.code === 4001) toast("Wallet connection was declined.");
+    else toast("Wallet connection failed: " + (error.message || "Unknown error"));
+  }
+}
+
+function registerProviderEvents(){
+  if(!activeProvider || !activeProvider.on) return;
+
+  activeProvider.removeListener?.("accountsChanged",onAccountsChanged);
+  activeProvider.removeListener?.("chainChanged",onChainChanged);
+
+  activeProvider.on("accountsChanged",onAccountsChanged);
+  activeProvider.on("chainChanged",onChainChanged);
+}
+
+function unregisterProviderEvents(){
+  if(!activeProvider?.removeListener) return;
+  activeProvider.removeListener("accountsChanged",onAccountsChanged);
+  activeProvider.removeListener("chainChanged",onChainChanged);
+}
+
+function onAccountsChanged(accounts){
+  if(!accounts?.length){
+    disconnectWallet();
+    return;
+  }
+
+  connectedAddress = accounts[0];
+  ++walletSession;
+  updateWalletUI();
+  refreshWalletData();
+}
+
+async function onChainChanged(){
+  ++walletSession;
+  updateWalletUI();
+
+  if(!activeProvider || !connectedAddress) return;
+
+  try{
+    const id = parseInt(
+      await activeProvider.request({method:"eth_chainId"}),16
+    );
+
+    if(id !== CONFIG.chainId){
+      $("walletChain").textContent = "Network: Wrong network — switch to BSC";
+      $("walletBNB").textContent = "BNB Balance: —";
+      $("walletAVRON").textContent = "AVRON Balance: —";
+      toast("Please switch to BNB Smart Chain.");
+    }else{
+      await refreshWalletData();
+    }
+  }catch(e){}
+}
+
+function updateWalletUI(){
+  const button = $("headerWalletBtn");
+
+  if(connectedAddress){
+    button.textContent = shortAddress(connectedAddress);
+    $("walletInfo").classList.add("show");
+    $("walletAddress").textContent = "Address: " + connectedAddress;
+  }else{
+    button.textContent = "Connect Wallet";
+    $("walletInfo").classList.remove("show");
+  }
+}
+
+async function refreshWalletData(){
+  if(!activeProvider || !connectedAddress) return;
+
+  const session = walletSession;
+  const provider = activeProvider;
+  const address = connectedAddress;
+
+  try{
+    const chainHex = await provider.request({method:"eth_chainId"});
+    if(session !== walletSession) return;
+
+    const chain = parseInt(chainHex,16);
+    $("walletChain").textContent =
+      "Network: " + (chain === 56 ? "BNB Smart Chain" : "Incorrect network");
+
+    if(chain !== 56) return;
+
+    const results = await Promise.allSettled([
+      provider.request({
+        method:"eth_getBalance",
+        params:[address,"latest"]
+      }),
+      provider.request({
+        method:"eth_call",
+        params:[{
+          to:CONTRACT,
+          data:"0x70a08231"+encodeAddress(address)
+        },"latest"]
+      })
+    ]);
+
+    if(session !== walletSession) return;
+
+    $("walletBNB").textContent = "BNB Balance: " +
+      (results[0].status === "fulfilled"
+        ? formatUnits(BigInt(results[0].value),18,5)
+        : "Unavailable");
+
+    $("walletAVRON").textContent = "AVRON Balance: " +
+      (results[1].status === "fulfilled"
+        ? formatUnits(BigInt(results[1].value),tokenDecimals,5)
+        : "Unavailable");
+
+  }catch(error){
+    if(session !== walletSession) return;
+    $("walletBNB").textContent = "BNB Balance: Unavailable";
+    $("walletAVRON").textContent = "AVRON Balance: Unavailable";
+  }
+}
+
+function disconnectWallet(){
+  // A dApp can clear its local session, but cannot revoke wallet permissions.
+  ++walletSession;
+  unregisterProviderEvents();
+  activeProvider = null;
+  connectedAddress = null;
+  updateWalletUI();
+
+  $("walletAddress").textContent = "Address: —";
+  $("walletChain").textContent = "Network: —";
+  $("walletBNB").textContent = "BNB Balance: —";
+  $("walletAVRON").textContent = "AVRON Balance: —";
+
+  toast("Local wallet session disconnected. Revoke site access in your wallet if needed.");
+}
+
+async function addTokenToWallet(){
+  if(!activeProvider || !connectedAddress){
+    toast("Connect your wallet first.");
+    openWalletModal();
+    return;
+  }
+
+  try{
+    const switched = await ensureBSC(activeProvider);
+    if(!switched) return;
+
+    const symbol = verifiedTokenSymbol || CONFIG.symbol;
+
+    const added = await activeProvider.request({
+      method:"wallet_watchAsset",
+      params:{
+        type:"ERC20",
+        options:{
+          address:CONTRACT,
+          symbol:symbol,
+          decimals:tokenDecimals,
+          image:CONFIG.logo
+        }
+      }
+    });
+
+    if(added) toast("AVRON token added to your wallet.");
+    else toast("Token addition was not completed.");
+
+  }catch(error){
+    toast("Your wallet could not add the token automatically.");
+  }
+}
+
+/* =======================================
+   INITIALIZATION
+======================================= */
+
+loadBlockchainData();
+
+setInterval(()=>{
+  if(document.visibilityState === "visible"){
+    loadBlockchainData();
+    if(connectedAddress) refreshWalletData();
+  }
+},60000);
+
+</script>
+
+</body>
+</html>
+
